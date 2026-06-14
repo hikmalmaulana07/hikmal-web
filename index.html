@@ -152,7 +152,9 @@ p{
 </a>
     
     <br><br>
-
+    
+<p id="counter">💪 Ditekan: 0 kali</p>
+    
 <button onclick="semangat()" class="btn">
     💪 Semangat
 </button>
@@ -187,8 +189,15 @@ function updateJam() {
 setInterval(updateJam, 1000);
 updateJam();
 
+let jumlahKlik = 0;
+
 function semangat(){
-    alert("Jangan menyerah Hikmal! 🚀\nTerus belajar sedikit demi sedikit.");
+    jumlahKlik++;
+
+    document.getElementById("counter").innerHTML =
+    "💪 Ditekan: " + jumlahKlik + " kali";
+
+    alert("Jangan menyerah Hikmal! 🚀");
 }
     let gelap = false;
 
