@@ -157,6 +157,12 @@ p{
     💪 Semangat
 </button>
 
+    <br><br>
+
+<button onclick="gantiMode()" class="btn">
+    🌙 Dark Mode
+</button>
+
     <div id="jam" style="margin-top:20px;font-size:20px;"></div>
 
 <div class="footer">
@@ -177,6 +183,21 @@ updateJam();
 
 function semangat(){
     alert("Jangan menyerah Hikmal! 🚀\nTerus belajar sedikit demi sedikit.");
+}
+    let gelap = false;
+
+function gantiMode(){
+
+    if(!gelap){
+        document.body.style.background =
+        "linear-gradient(135deg,#111,#222,#333)";
+        gelap = true;
+    }else{
+        document.body.style.background =
+        "linear-gradient(135deg,#4f46e5,#7c3aed,#2563eb)";
+        gelap = false;
+    }
+
 }
 </script>
 </body>
