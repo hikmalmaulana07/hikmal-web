@@ -106,6 +106,14 @@ h3{
 p{
     margin:5px 0;
 }
+
+body.dark {
+    background: linear-gradient(135deg,#111,#222,#333);
+}
+
+body {
+    transition: background 0.5s ease;
+}
 </style>
 </head>
 
@@ -181,11 +189,9 @@ p{
     
 <script>
 function updateJam() {
-    const sekarang = new Date();
-    document.getElementById("jam").innerHTML =
-        sekarang.toLocaleTimeString("id-ID");
+    document.getElementById("jam").textContent =
+        new Date().toLocaleTimeString("id-ID");
 }
-
 setInterval(updateJam, 1000);
 updateJam();
 
@@ -202,28 +208,19 @@ function semangat(){
     let gelap = false;
 
 function gantiMode(){
-
-    if(!gelap){
-        document.body.style.background =
-        "linear-gradient(135deg,#111,#222,#333)";
-        gelap = true;
-    }else{
-        document.body.style.background =
-        "linear-gradient(135deg,#4f46e5,#7c3aed,#2563eb)";
-        gelap = false;
-    }
-
+    document.body.classList.toggle("dark");
+    gelap = !gelap;
 }
     function tebakAngka(){
 
-    let angkaRahasia = 7;
+    let angkaRahasia = Math.floor(Math.random() * 10) + 1;
 
     let jawaban = prompt("Tebak angka 1 - 10");
 
-    if(jawaban == angkaRahasia){
-        alert("🎉 Benar!");
-    }else{
-        alert("❌ Salah, coba lagi!");
+    if (jawaban == angkaRahasia) {
+    alert("🎉 Benar! Angkanya " + angkaRahasia);
+} else {
+    alert("❌ Salah! Jawaban yang benar: " + angkaRahasia);
     }
 
     }
