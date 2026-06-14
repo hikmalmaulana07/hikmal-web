@@ -97,6 +97,22 @@ h1{
     font-size:12px;
     opacity:0.6;
 }
+    .typing {
+    font-size: 22px;
+    font-weight: 600;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
 </style>
 </head>
 
@@ -106,7 +122,7 @@ h1{
 
 <img src="6841707944586560513_avatar.png.png" class="profile">
 
-<h1>Hikmal Maulana</h1>
+<h1 class="typing"></h1>
 <p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>
 
 <div class="section">
@@ -140,6 +156,19 @@ function updateJam(){
 }
 setInterval(updateJam,1000);
 updateJam();
+
+    const teks = "Hikmal Maulana";
+let i = 0;
+
+function typeEffect(){
+    if(i < teks.length){
+        document.querySelector(".typing").innerHTML += teks.charAt(i);
+        i++;
+        setTimeout(typeEffect, 150);
+    }
+}
+
+typeEffect();
 </script>
 
 </body>
