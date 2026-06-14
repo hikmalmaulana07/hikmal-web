@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hikmal Maulana</title>
+<title>Hikmal Maulana | Portfolio</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
 body{
@@ -18,102 +18,84 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed,#2563eb);
-    background-size:400% 400%;
-    animation:bg 10s ease infinite;
-}
-
-@keyframes bg{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-.card{
-    animation: muncul 1s ease;
-    width:90%;
-    max-width:420px;
-    padding:30px;
-    text-align:center;
-    border-radius:25px;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
+    background: linear-gradient(135deg,#0f172a,#1e1b4b,#0b1220);
     color:white;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3),
-                0 0 20px rgba(124,58,237,0.4);
-    }
-}
-    @keyframes muncul{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-    }
+    padding:20px;
 
+    transition: all 0.4s ease;
+}
+
+/* CARD GLASS */
+.card{
+    width:100%;
+    max-width:420px;
+    padding:25px;
+    border-radius:25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    text-align:center;
+    animation: fade 1s ease;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* PROFILE */
 .profile{
-    width:160px;
-    height:160px;
+    width:110px;
+    height:110px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid white;
+    border:3px solid white;
     margin-bottom:15px;
 }
 
+/* TEXT */
 h1{
-    margin-bottom:10px;
+    font-size:22px;
+    margin-bottom:5px;
 }
 
 .bio{
-    opacity:0.9;
+    font-size:14px;
+    opacity:0.8;
     margin-bottom:20px;
 }
 
-.info{
-    margin:10px 0;
-}
-
+/* BUTTON STYLE */
 .btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:white;
-    color:#4f46e5;
-    text-decoration:none;
+    display:block;
+    margin:10px 0;
+    padding:12px;
     border-radius:12px;
-    font-weight:bold;
+    background: rgba(255,255,255,0.12);
+    color:white;
+    text-decoration:none;
     transition:0.3s;
+    font-weight:500;
 }
 
 .btn:hover{
-    transform:scale(1.1);
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.03);
+}
+
+/* SECTION */
+.section{
+    margin-top:15px;
+    text-align:left;
+    font-size:14px;
+    opacity:0.9;
 }
 
 .footer{
     margin-top:20px;
-    font-size:14px;
-    opacity:0.8;
-}
-
-h3{
-    margin-top:20px;
-    margin-bottom:10px;
-}
-
-p{
-    margin:5px 0;
-}
-
-body.dark {
-    background: linear-gradient(135deg,#111,#222,#333);
-}
-
-body {
-    transition: all 0.5s ease;
+    font-size:12px;
+    opacity:0.6;
 }
 </style>
 </head>
@@ -124,105 +106,41 @@ body {
 
 <img src="6841707944586560513_avatar.png.png" class="profile">
 
-    <h1>Hikmal Maulana</h1>
+<h1>Hikmal Maulana</h1>
+<p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>
 
-    <p class="bio">
-        🚀 Sedang belajar Web Development & GitHub
-    </p>
-    <h3 style="margin-top:20px;">Skill</h3>
+<div class="section">
+<b>📌 About</b>
+<p>Saya sedang belajar Web Development dan membangun project di GitHub.</p>
+</div>
 
-<p>✅ HTML</p>
-<p>✅ GitHub</p>
-<p>✅ CSS</p>
-<p>🔄 JavaScript (Belajar)</p>
+<div class="section">
+<b>⚡ Skills</b>
+<p>HTML • CSS • JavaScript (learning)</p>
+</div>
 
-    <div class="info">
-        📱 Nomor: 08885107619
-    </div>
+<a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
+<a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
+<a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
 
-    <div class="info">
-        📍 Indonesia
-    </div>
-
-    <a href="https://github.com/hikmalmaulana07" class="btn">
-    GitHub Saya
-</a>
-
-<br><br>
-
-<a href="https://wa.me/628885107619" class="btn">
-    WhatsApp Saya
-</a>
-
-    <br><br>
-
-<a href="https://instagram.com/hkmaal.mlna07" class="btn">
-    Instagram Saya
-</a>
-    
-    <br><br>
-    
-<p id="counter">💪 Ditekan: 0 kali</p>
-    
-<button onclick="semangat()" class="btn">
-    💪 Semangat
-</button>
-
-    <br><br>
-
-<button onclick="gantiMode()" class="btn">
-    🌙 Dark Mode
-</button>
-
-    <br><br>
-
-<button onclick="tebakAngka()" class="btn">
-    🎮 Tebak Angka
-</button>
-
-    <div id="jam" style="margin-top:20px;font-size:20px;"></div>
+<div class="section">
+<p id="jam"></p>
+</div>
 
 <div class="footer">
-    Dibuat dengan ❤️ menggunakan GitHub Pages
+Made with ❤️ using GitHub Pages
 </div>
-    
+
 </div>
-    
+
 <script>
-function updateJam() {
+function updateJam(){
     document.getElementById("jam").textContent =
-        new Date().toLocaleTimeString("id-ID");
+    new Date().toLocaleTimeString("id-ID");
 }
-setInterval(updateJam, 1000);
+setInterval(updateJam,1000);
 updateJam();
-
-let jumlahKlik = 0;
-
-function semangat(){
-    jumlahKlik++;
-
-    document.getElementById("counter").innerHTML =
-    "💪 Ditekan: " + jumlahKlik + " kali";
-
-    alert("Jangan menyerah Hikmal! 🚀");
-}
-
-function gantiMode(){
-    document.body.classList.toggle("dark");
-}
-    function tebakAngka(){
-
-    let angkaRahasia = Math.floor(Math.random() * 10) + 1;
-
-    let jawaban = prompt("Tebak angka 1 - 10");
-
-    if (jawaban == angkaRahasia) {
-    alert("🎉 Benar! Angkanya " + angkaRahasia);
-} else {
-    alert("❌ Salah! Jawaban yang benar: " + angkaRahasia);
-    }
-
-    }
 </script>
+
 </body>
 </html>
