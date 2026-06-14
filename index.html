@@ -30,6 +30,7 @@ body{
 }
 
 .card{
+    animation: muncul 1s ease;
     width:90%;
     max-width:420px;
     padding:30px;
@@ -40,7 +41,18 @@ body{
     border:1px solid rgba(255,255,255,0.2);
     color:white;
     box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    
 }
+    @keyframes muncul{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+    }
 
 .profile{
     width:160px;
@@ -56,6 +68,12 @@ h1{
 }
 
 .bio{
+    <h3 style="margin-top:20px;">Skill</h3>
+
+<p>✅ HTML</p>
+<p>✅ GitHub</p>
+<p>🔄 CSS (Belajar)</p>
+<p>🔄 JavaScript (Belajar)</p>
     opacity:0.9;
     margin-bottom:20px;
 }
@@ -125,6 +143,17 @@ h1{
     </div>
 
 </div>
+    <div id="jam" style="margin-top:20px;font-size:20px;"></div>
 
+<script>
+function updateJam() {
+    const sekarang = new Date();
+    document.getElementById("jam").innerHTML =
+        sekarang.toLocaleTimeString("id-ID");
+}
+
+setInterval(updateJam, 1000);
+updateJam();
+</script>
 </body>
 </html>
