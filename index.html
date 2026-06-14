@@ -13,6 +13,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
+/* ===== BACKGROUND ===== */
 body{
     min-height:100vh;
     display:flex;
@@ -21,28 +22,99 @@ body{
     background: linear-gradient(135deg,#0f172a,#1e1b4b,#0b1220);
     color:white;
     padding:20px;
-
-    transition: all 0.4s ease;
+    overflow:hidden;
 }
 
-/* CARD GLASS */
+/* NEBULA EFFECT */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(124,58,237,0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.2), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(16,185,129,0.15), transparent 50%);
+    animation: moveGlow 12s infinite alternate ease-in-out;
+    z-index:-2;
+}
+
+@keyframes moveGlow{
+    from{transform:translate(-10%,-10%);}
+    to{transform:translate(10%,10%);}
+}
+
+/* ===== STARS ===== */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.6;
+    animation: floatStar linear infinite;
+    filter:blur(0.3px);
+    box-shadow:0 0 6px white;
+}
+
+@keyframes floatStar{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    30%{opacity:1;}
+    to{
+        transform:translateY(-100vh) translateX(20px);
+        opacity:0;
+    }
+}
+
+/* SHOOTING STAR */
+.shooting-star{
+    position:fixed;
+    width:120px;
+    height:2px;
+    background:linear-gradient(90deg,white,transparent);
+    top:-10vh;
+    left:-10vw;
+    transform:rotate(45deg);
+    opacity:0;
+    animation:shoot 2s linear forwards;
+    z-index:-1;
+}
+
+@keyframes shoot{
+    0%{transform:translate(0,0) rotate(45deg);opacity:0;}
+    10%{opacity:1;}
+    100%{transform:translate(120vw,120vh) rotate(45deg);opacity:0;}
+}
+
+/* ===== CARD ===== */
 .card{
     width:100%;
     max-width:420px;
     padding:25px;
     border-radius:25px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.15);
-   box-shadow: 0 10px 40px rgba(0,0,0,0.5),
-            0 0 20px rgba(124,58,237,0.2);
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 10px 40px rgba(0,0,0,0.5),
+               0 0 20px rgba(124,58,237,0.2);
     text-align:center;
-    animation: fade 1s ease;
+    transition:0.3s ease;
+    animation:fade 1s ease;
 }
 
 @keyframes fade{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
 /* PROFILE */
@@ -67,13 +139,29 @@ h1{
     margin-bottom:20px;
 }
 
-/* BUTTON STYLE */
+/* TYPEWRITER */
+.typing{
+    font-size:22px;
+    font-weight:600;
+    border-right:2px solid white;
+    white-space:nowrap;
+    overflow:hidden;
+    width:fit-content;
+    margin:0 auto;
+    animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+    50%{border-color:transparent;}
+}
+
+/* BUTTON */
 .btn{
     display:block;
     margin:10px 0;
     padding:12px;
     border-radius:12px;
-    background: rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.12);
     color:white;
     text-decoration:none;
     transition:0.3s;
@@ -81,8 +169,8 @@ h1{
 }
 
 .btn:hover{
-    background: rgba(255,255,255,0.25);
-    transform: scale(1.03);
+    background:rgba(255,255,255,0.25);
+    transform:scale(1.03);
 }
 
 /* SECTION */
@@ -98,65 +186,13 @@ h1{
     font-size:12px;
     opacity:0.6;
 }
-    .typing {
-    font-size: 22px;
-    font-weight: 600;
-    border-right: 2px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    width: fit-content;
-    margin: 0 auto;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-    .stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    background: transparent;
-}
-
-/* BINTANG */
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.6;
-    animation: floatStar linear infinite;
-
-    filter: blur(0.3px);
-    box-shadow: 0 0 6px white;
-}
-/* ANIMASI BINTANG JATUH / MELAYANG */
-@keyframes floatStar {
-    from {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
-    }
-    30% {
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-100vh) translateX(20px);
-        opacity: 0;
-    }
-}
 </style>
 </head>
 
 <body>
+
 <div class="stars"></div>
+
 <div class="card">
 
 <img src="6841707944586560513_avatar.png.png" class="profile">
@@ -178,10 +214,6 @@ h1{
 <a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
 <a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
 
-<div class="section">
-<p id="jam"></p>
-</div>
-
 <div class="footer">
 Made with ❤️ using GitHub Pages
 </div>
@@ -189,42 +221,62 @@ Made with ❤️ using GitHub Pages
 </div>
 
 <script>
-function updateJam(){
-    document.getElementById("jam").textContent =
-    new Date().toLocaleTimeString("id-ID");
-}
-setInterval(updateJam,1000);
-updateJam();
+/* ===== JAM ===== */
+setInterval(() => {}, 1000);
 
-    const teks = "Hikmal Maulana";
+/* ===== TYPING ===== */
+const teks = "Hikmal Maulana";
 let i = 0;
 
 function typeEffect(){
     if(i < teks.length){
         document.querySelector(".typing").innerHTML += teks.charAt(i);
         i++;
-        setTimeout(typeEffect, 150);
+        setTimeout(typeEffect, 120);
     }
 }
-
 typeEffect();
-    function createStars() {
-    const starsContainer = document.querySelector(".stars");
 
-    for (let i = 0; i < 80; i++) {
+/* ===== STARS ===== */
+function createStars(){
+    const container = document.querySelector(".stars");
+
+    for(let i=0;i<80;i++){
         let star = document.createElement("div");
         star.classList.add("star");
 
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.animationDuration = (Math.random() * 5 + 3) + "s";
-        star.style.opacity = Math.random();
+        star.style.left = Math.random()*100 + "vw";
+        star.style.top = Math.random()*100 + "vh";
+        star.style.animationDuration = (Math.random()*5+3)+"s";
 
-        starsContainer.appendChild(star);
+        container.appendChild(star);
     }
 }
-
 createStars();
+
+/* ===== SHOOTING STAR ===== */
+function shoot(){
+    const star = document.createElement("div");
+    star.classList.add("shooting-star");
+    document.body.appendChild(star);
+
+    setTimeout(()=>star.remove(),2000);
+}
+
+setInterval(()=>{
+    if(Math.random()>0.6){
+        shoot();
+    }
+},3000);
+
+/* ===== PARALLAX MOUSE ===== */
+document.addEventListener("mousemove",(e)=>{
+    const x = (window.innerWidth/2 - e.clientX)/50;
+    const y = (window.innerHeight/2 - e.clientY)/50;
+
+    document.querySelector(".card").style.transform =
+        `translate(${x}px,${y}px)`;
+});
 </script>
 
 </body>
