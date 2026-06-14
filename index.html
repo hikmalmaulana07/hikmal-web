@@ -1,71 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Website Hikmal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hikmal Maulana</title>
 
-        .card {
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            margin: auto;
-            backdrop-filter: blur(10px);
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-        }
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed,#2563eb);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
 
-        h1 {
-            margin-top: 15px;
-        }
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: white;
-            color: #4f46e5;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+.card{
+    width:90%;
+    max-width:420px;
+    padding:30px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    color:white;
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+}
 
-        a:hover {
-            transform: scale(1.05);
-        }
-    </style>
+.profile{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    margin-bottom:15px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.bio{
+    opacity:0.9;
+    margin-bottom:20px;
+}
+
+.info{
+    margin:10px 0;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:white;
+    color:#4f46e5;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.footer{
+    margin-top:20px;
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
 </head>
+
 <body>
 
 <div class="card">
-    <img src="6841707944586560513_avatar.png.png" alt="Foto Profil">
+
+    <img src="6841707944586560513_avatar.png.png" class="profile">
 
     <h1>Hikmal Maulana</h1>
 
-    <p>👋 Halo! Saya sedang belajar GitHub dan Web Development.</p>
+    <p class="bio">
+        🚀 Sedang belajar Web Development & GitHub
+    </p>
 
-    <p>🚀 Tujuan saya adalah menjadi orang yang ahli di bidang digital.</p>
+    <div class="info">
+        📱 Nomor: 08885107619
+    </div>
 
-    <a href="https://wa.me/628885107619">
-    Chat WhatsApp
-    </a>
-    <a href="https://instagram.com/hkmaal.mlna07">Instagram</a>
+    <div class="info">
+        📍 Indonesia
+    </div>
 
-    <a href="https://github.com/hikmalmaulana07">
+    <a href="https://github.com/hikmalmaulana07" class="btn">
         GitHub Saya
     </a>
+
+    <a href="https://instagram.com/hkmaal.mlna07">Instagram</a>
+
+    <div class="footer">
+        Dibuat dengan ❤️ menggunakan GitHub Pages
+    </div>
+
 </div>
 
 </body>
