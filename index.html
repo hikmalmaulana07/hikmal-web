@@ -163,6 +163,12 @@ p{
     🌙 Dark Mode
 </button>
 
+    <br><br>
+
+<button onclick="tebakAngka()" class="btn">
+    🎮 Tebak Angka
+</button>
+
     <div id="jam" style="margin-top:20px;font-size:20px;"></div>
 
 <div class="footer">
@@ -199,6 +205,19 @@ function gantiMode(){
     }
 
 }
+    function tebakAngka(){
+
+    let angkaRahasia = 7;
+
+    let jawaban = prompt("Tebak angka 1 - 10");
+
+    if(jawaban == angkaRahasia){
+        alert("🎉 Benar!");
+    }else{
+        alert("❌ Salah, coba lagi!");
+    }
+
+    }
 </script>
 </body>
 </html>
