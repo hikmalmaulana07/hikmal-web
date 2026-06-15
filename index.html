@@ -208,11 +208,6 @@ h1{
 <p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>
 
 <div class="section">
-<b>📌 About</b>
-<p>Saya sedang belajar Web Development dan membangun project di GitHub.</p>
-</div>
-
-<div class="section">
 <b>⚡ Skills</b>
 <p>HTML • CSS • JavaScript (learning)</p>
 </div>
@@ -220,6 +215,13 @@ h1{
 <a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
 <a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
 <a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
+
+<!-- Tambahkan di sini -->
+<audio id="bgMusic" loop>
+    <source src="ssttik.io_1781538196170.mp3" type="audio/mpeg">
+</audio>
+
+<button class="btn" id="musicBtn">🎵 Putar Musik</button>
 
 <div class="footer">
 Made with ❤️ using GitHub Pages
@@ -304,6 +306,23 @@ document.addEventListener("mousemove",(e)=>{
 
     card.style.transform =
         `translate(${x}px,${y}px) scale(${scale})`;
+});
+
+    const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+    if (!playing) {
+        music.play();
+        musicBtn.textContent = "⏸️ Hentikan Musik";
+        playing = true;
+    } else {
+        music.pause();
+        musicBtn.textContent = "🎵 Putar Musik";
+        playing = false;
+    }
 });
 </script>
 
