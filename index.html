@@ -242,6 +242,44 @@ body.light-mode .typing{
     font-size:16px;
     font-weight:600;
     }
+
+    .skill{
+    margin-top:15px;
+}
+
+.skill span{
+    display:block;
+    margin-bottom:5px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    border-radius:20px;
+    transition:width 2s ease;
+}
+
+.html{
+    background:#ff6b35;
+}
+
+.css{
+    background:#3b82f6;
+}
+
+.js{
+    background:#facc15;
+}
 </style>  </head>  <body>  <div class="stars"></div>  <div class="card"> 
     <img src="6841707944586560513_avatar.png" class="profile"> 
     <h1 class="typing"></h1>  
@@ -251,11 +289,32 @@ body.light-mode .typing{
 <p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p> 
 
     <div id="clock" class="clock"></div>
-    <div class="section">  
-<b>⚡ Skills</b>  
-<p>HTML • CSS • JavaScript (learning)</p>  
-</div>
+    
+<div class="section">
+    <b>⚡ Skills</b>
 
+    <div class="skill">
+        <span>HTML</span>
+        <div class="progress">
+            <div class="progress-bar html"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span>CSS</span>
+        <div class="progress">
+            <div class="progress-bar css"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress">
+            <div class="progress-bar js"></div>
+        </div>
+    </div>
+</div>
+    
     <button class="btn" id="themeBtn">🌙 Dark Mode</button>
     
     <a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
@@ -446,6 +505,14 @@ setInterval(updateClock, 1000);
 }
 
 updateGreeting();
+
+    window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.querySelector(".html").style.width = "95%";
+        document.querySelector(".css").style.width = "85%";
+        document.querySelector(".js").style.width = "60%";
+    }, 500);
+});
 </script>  
 </body>  
 </html>  
