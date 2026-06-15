@@ -286,12 +286,23 @@ setInterval(()=>{
 },3000);
 
 /* ===== PARALLAX MOUSE ===== */
+const card = document.querySelector(".card");
+
 document.addEventListener("mousemove",(e)=>{
     const x = (window.innerWidth/2 - e.clientX)/50;
     const y = (window.innerHeight/2 - e.clientY)/50;
 
-    document.querySelector(".card").style.transform =
-        `translate(${x}px,${y}px)`;
+    card.style.transform =
+        `translate(${x}px,${y}px) scale(1.02)`;
+});
+
+/* HOVER EFFECT */
+card.addEventListener("mouseenter", ()=>{
+    card.style.transform += " scale(1.05)";
+});
+
+card.addEventListener("mouseleave", ()=>{
+    card.style.transform = "translate(0,0) scale(1.02)";
 });
     document.addEventListener("mousemove",(e)=>{
     document.body.style.background = `
