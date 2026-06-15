@@ -316,21 +316,22 @@ const musicBtn = document.getElementById("musicBtn");
 
 let playing = false;
 
-musicBtn.addEventListener("click", async () => {
-    if (!playing) {
-        try {
+musicBtn.onclick = async () => {
+    try {
+        if (music.paused) {
             await music.play();
-            musicBtn.textContent = "⏸️ Hentikan Musik";
-            playing = true;
-        } catch (e) {
-            alert("Musik gagal diputar.");
+            console.log("Music playing");
+            musicBtn.innerHTML = "⏸️ Hentikan Musik";
+        } else {
+            music.pause();
+            console.log("Music paused");
+            musicBtn.innerHTML = "🎵 Putar Musik";
         }
-    } else {
-        music.pause();
-        musicBtn.textContent = "🎵 Putar Musik";
-        playing = false;
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
     }
-});
+};
 </script>
 
 </body>
