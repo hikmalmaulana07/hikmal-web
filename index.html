@@ -157,17 +157,20 @@ h1{
 }  
   
 /* BUTTON */  
-.btn{  
-    display:block;  
-    margin:10px 0;  
-    padding:12px;  
-    border-radius:12px;  
-    background:rgba(255,255,255,0.12);  
-    color:white;  
-    text-decoration:none;  
-    transition:0.3s;  
-    font-weight:500;  
-}  
+.btn{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+    border:none;
+    cursor:pointer;
+}
   
 .btn:hover{  
     background:rgba(255,255,255,0.25);  
@@ -351,25 +354,6 @@ themeBtn.addEventListener("click", () => {
         themeBtn.textContent = "🌙 Dark Mode";
     }else{
         localStorage.setItem("theme","dark");
-        themeBtn.textContent = "☀️ Light Mode";
-    }
-});
-
-    // Saat halaman dibuka
-if(localStorage.getItem("theme") === "light"){
-    document.body.classList.add("light-mode");
-    themeBtn.textContent = "🌙 Dark Mode";
-}
-
-// Saat tombol ditekan
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-
-    if(document.body.classList.contains("light-mode")){
-        localStorage.setItem("theme", "light");
-        themeBtn.textContent = "🌙 Dark Mode";
-    } else {
-        localStorage.setItem("theme", "dark");
         themeBtn.textContent = "☀️ Light Mode";
     }
 });
