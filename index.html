@@ -222,9 +222,22 @@ body.light-mode .btn:hover{
 body.light-mode .typing{
     border-right:2px solid #111827;
 }
-    
-</style>  </head>  <body>  <div class="stars"></div>  <div class="card">  <img src="6841707944586560513_avatar.png" class="profile">  <h1 class="typing"></h1>  
-<p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>  <div class="section">  
+
+    .clock{
+    margin:15px 0;
+    padding:10px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    font-size:15px;
+    font-weight:600;
+    }
+</style>  </head>  <body>  <div class="stars"></div>  <div class="card"> 
+    <img src="6841707944586560513_avatar.png" class="profile">  <h1 class="typing"></h1>  
+<p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p> 
+
+    <div id="clock" class="clock"></div>
+    <div class="section">  
 <b>⚡ Skills</b>  
 <p>HTML • CSS • JavaScript (learning)</p>  
 </div>
@@ -359,6 +372,47 @@ themeBtn.addEventListener("click", () => {
         themeBtn.textContent = "☀️ Light Mode";
     }
 });
+    function updateClock() {
+    const now = new Date();
+
+    const hari = [
+        "Minggu",
+        "Senin",
+        "Selasa",
+        "Rabu",
+        "Kamis",
+        "Jumat",
+        "Sabtu"
+    ];
+
+    const bulan = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember"
+    ];
+
+    const h = String(now.getHours()).padStart(2, "0");
+    const m = String(now.getMinutes()).padStart(2, "0");
+    const s = String(now.getSeconds()).padStart(2, "0");
+
+    const tanggal =
+        `${hari[now.getDay()]}, ${now.getDate()} ${bulan[now.getMonth()]} ${now.getFullYear()}`;
+
+    document.getElementById("clock").innerHTML =
+        `🕒 ${h}:${m}:${s}<br>📅 ${tanggal}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 </script>  
 </body>  
 </html>  
