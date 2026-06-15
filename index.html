@@ -354,6 +354,25 @@ themeBtn.addEventListener("click", () => {
         themeBtn.textContent = "☀️ Light Mode";
     }
 });
+
+    // Saat halaman dibuka
+if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light-mode");
+    themeBtn.textContent = "🌙 Dark Mode";
+}
+
+// Saat tombol ditekan
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "🌙 Dark Mode";
+    } else {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "☀️ Light Mode";
+    }
+});
 </script>  
 </body>  
 </html>  
