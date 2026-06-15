@@ -161,11 +161,6 @@ h1{
 
 /* BUTTON */
 .btn{
-    button.btn{
-    width:100%;
-    border:none;
-    cursor:pointer;
-    font-size:16px;
     display:block;
     margin:10px 0;
     padding:12px;
@@ -175,15 +170,20 @@ h1{
     text-decoration:none;
     transition:0.3s;
     font-weight:500;
+    width:100%;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
 }
 
 .btn:hover{
     background:rgba(255,255,255,0.25);
     transform:scale(1.03);
 }
-    .btn:active{
+
+.btn:active{
     transform:scale(0.97);
-    }
+}
 
 /* SECTION */
 .section{
@@ -314,24 +314,21 @@ document.addEventListener("mousemove",(e)=>{
     const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-let playing = false;
+music.volume = 1;
 
-musicBtn.onclick = async () => {
-    try {
-        if (music.paused) {
+musicBtn.addEventListener("click", async () => {
+    if (music.paused) {
+        try {
             await music.play();
-            console.log("Music playing");
-            musicBtn.innerHTML = "⏸️ Hentikan Musik";
-        } else {
-            music.pause();
-            console.log("Music paused");
-            musicBtn.innerHTML = "🎵 Putar Musik";
+            musicBtn.textContent = "⏸️ Hentikan Musik";
+        } catch (e) {
+            alert("Gagal memutar musik");
         }
-    } catch (err) {
-        console.error(err);
-        alert(err.message);
+    } else {
+        music.pause();
+        musicBtn.textContent = "🎵 Putar Musik";
     }
-};
+});
 </script>
 
 </body>
