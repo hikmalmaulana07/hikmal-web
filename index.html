@@ -190,11 +190,45 @@ h1{
     font-size:12px;  
     opacity:0.6;  
 }  
+    
+    /* ===== LIGHT MODE ===== */
+body.light-mode{
+    background: linear-gradient(135deg,#f8fafc,#e2e8f0,#cbd5e1);
+    color:#111827;
+}
+
+body.light-mode::before{
+    opacity:0.2;
+}
+
+body.light-mode .card{
+    background:rgba(255,255,255,0.7);
+    color:#111827;
+    border:1px solid rgba(0,0,0,0.1);
+}
+
+body.light-mode .btn{
+    background:rgba(0,0,0,0.08);
+    color:#111827;
+}
+
+body.light-mode .btn:hover{
+    background:rgba(0,0,0,0.15);
+}
+
+body.light-mode .typing{
+    border-right:2px solid #111827;
+}
+    
 </style>  </head>  <body>  <div class="stars"></div>  <div class="card">  <img src="6841707944586560513_avatar.png" class="profile">  <h1 class="typing"></h1>  
 <p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>  <div class="section">  
 <b>⚡ Skills</b>  
 <p>HTML • CSS • JavaScript (learning)</p>  
-</div>  <a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
+</div>
+
+    <button class="btn" id="themeBtn">🌙 Dark Mode</button>
+    
+    <a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
 <a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
 <a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
 
@@ -298,7 +332,28 @@ musicBtn.addEventListener("click", () => {
         musicBtn.textContent = "🎵 Putar Musik";  
         playing = false;  
     }  
-});  
-</script>  </body>  
+}); 
+
+    const themeBtn = document.getElementById("themeBtn");
+
+if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light-mode");
+    themeBtn.textContent = "🌙 Dark Mode";
+}else{
+    themeBtn.textContent = "☀️ Light Mode";
+}
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        localStorage.setItem("theme","light");
+        themeBtn.textContent = "🌙 Dark Mode";
+    }else{
+        localStorage.setItem("theme","dark");
+        themeBtn.textContent = "☀️ Light Mode";
+    }
+});
+</script>  
+</body>  
 </html>  
-cek
