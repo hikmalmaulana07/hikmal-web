@@ -283,18 +283,9 @@ setInterval(()=>{
     }
 },3000);
 
-/* ===== PARALLAX MOUSE ===== */
+/* ===== PARALLAX + HOVER FINAL ===== */
 const card = document.querySelector(".card");
 
-document.addEventListener("mousemove",(e)=>{
-    const x = (window.innerWidth/2 - e.clientX)/50;
-    const y = (window.innerHeight/2 - e.clientY)/50;
-
-    card.style.transform =
-        `translate(${x}px,${y}px) scale(1.02)`;
-});
-
-/* HOVER EFFECT */
 let isHover = false;
 
 card.addEventListener("mouseenter", ()=>{
@@ -305,10 +296,7 @@ card.addEventListener("mouseleave", ()=>{
     isHover = false;
 });
 
-card.addEventListener("mouseleave", ()=>{
-    card.style.transform = "translate(0,0) scale(1.02)";
-});
-    document.addEventListener("mousemove",(e)=>{
+document.addEventListener("mousemove",(e)=>{
     const x = (window.innerWidth/2 - e.clientX)/50;
     const y = (window.innerHeight/2 - e.clientY)/50;
 
