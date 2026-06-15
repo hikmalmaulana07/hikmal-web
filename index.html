@@ -112,7 +112,6 @@ body::before{
     animation:fade 1s ease;
 }
     .card:hover{
-    transform:scale(1.02);
     box-shadow:0 15px 50px rgba(0,0,0,0.6),
                0 0 30px rgba(124,58,237,0.4);
     }
@@ -230,7 +229,6 @@ Made with ❤️ using GitHub Pages
 
 <script>
 /* ===== JAM ===== */
-setInterval(() => {}, 1000);
 
 /* ===== TYPING ===== */
 const teks = "Hikmal Maulana";
@@ -297,19 +295,27 @@ document.addEventListener("mousemove",(e)=>{
 });
 
 /* HOVER EFFECT */
+let isHover = false;
+
 card.addEventListener("mouseenter", ()=>{
-    card.style.transform += " scale(1.05)";
+    isHover = true;
+});
+
+card.addEventListener("mouseleave", ()=>{
+    isHover = false;
 });
 
 card.addEventListener("mouseleave", ()=>{
     card.style.transform = "translate(0,0) scale(1.02)";
 });
     document.addEventListener("mousemove",(e)=>{
-    document.body.style.background = `
-    radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
-    rgba(124,58,237,0.15),
-    transparent 40%),
-    linear-gradient(135deg,#0f172a,#1e1b4b,#0b1220)`;
+    const x = (window.innerWidth/2 - e.clientX)/50;
+    const y = (window.innerHeight/2 - e.clientY)/50;
+
+    const scale = isHover ? 1.05 : 1.02;
+
+    card.style.transform =
+        `translate(${x}px,${y}px) scale(${scale})`;
 });
 </script>
 
