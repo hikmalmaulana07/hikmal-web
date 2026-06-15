@@ -1,335 +1,304 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hikmal Maulana | Portfolio</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-}
-
-/* ===== BACKGROUND ===== */
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: linear-gradient(135deg,#0f172a,#1e1b4b,#0b1220);
-    color:white;
-    padding:20px;
-    overflow:hidden;
-}
-
-/* NEBULA EFFECT */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background:
-    radial-gradient(circle at 20% 20%, rgba(124,58,237,0.25), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.2), transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(16,185,129,0.15), transparent 50%);
-    animation: moveGlow 12s infinite alternate ease-in-out;
-    z-index:-2;
-}
-
-@keyframes moveGlow{
-    from{transform:translate(-10%,-10%);}
-    to{transform:translate(10%,10%);}
-}
-
-/* ===== STARS ===== */
-.stars{
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
-}
-
-.star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    border-radius:50%;
-    opacity:0.6;
-    animation: floatStar linear infinite;
-    filter:blur(0.3px);
-    box-shadow:0 0 6px white;
-}
-
-@keyframes floatStar{
-    from{
-        transform:translateY(100vh);
-        opacity:0;
-    }
-    30%{opacity:1;}
-    to{
-        transform:translateY(-100vh) translateX(20px);
-        opacity:0;
-    }
-}
-
-/* SHOOTING STAR */
-.shooting-star{
-    position:fixed;
-    width:120px;
-    height:2px;
-    background:linear-gradient(90deg,white,transparent);
-    top:-10vh;
-    left:-10vw;
-    transform:rotate(45deg);
-    opacity:0;
-    animation:shoot 2s linear forwards;
-    z-index:-1;
-}
-
-@keyframes shoot{
-    0%{transform:translate(0,0) rotate(45deg);opacity:0;}
-    10%{opacity:1;}
-    100%{transform:translate(120vw,120vh) rotate(45deg);opacity:0;}
-}
-
-/* ===== CARD ===== */
-.card{
-    width:100%;
-    max-width:420px;
-    padding:25px;
-    border-radius:25px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.15);
-    box-shadow:0 10px 40px rgba(0,0,0,0.5),
-               0 0 20px rgba(124,58,237,0.2);
-    text-align:center;
-    transition:0.3s ease;
-    animation:fade 1s ease;
-}
-    .card:hover{
-    box-shadow:0 15px 50px rgba(0,0,0,0.6),
-               0 0 30px rgba(124,58,237,0.4);
-    }
-
-@keyframes fade{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-/* PROFILE */
-.profile{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid white;
-    margin-bottom:15px;
-}
-
-/* TEXT */
-h1{
-    font-size:22px;
-    margin-bottom:5px;
-}
-
-.bio{
-    font-size:14px;
-    opacity:0.8;
-    margin-bottom:20px;
-}
-
-/* TYPEWRITER */
-.typing{
-    font-size:22px;
-    font-weight:600;
-    border-right:2px solid white;
-    white-space:nowrap;
-    overflow:hidden;
-    width:fit-content;
-    margin:0 auto;
-    animation:blink 0.7s infinite;
-}
-
-@keyframes blink{
-    50%{border-color:transparent;}
-}
-
-/* BUTTON */
-.btn{
-    display:block;
-    margin:10px 0;
-    padding:12px;
-    border-radius:12px;
-    background:rgba(255,255,255,0.12);
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-    font-weight:500;
-    width:100%;
-    border:none;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.btn:hover{
-    background:rgba(255,255,255,0.25);
-    transform:scale(1.03);
-}
-
-.btn:active{
-    transform:scale(0.97);
-}
-
-/* SECTION */
-.section{
-    margin-top:15px;
-    text-align:left;
-    font-size:14px;
-    opacity:0.9;
-}
-
-.footer{
-    margin-top:20px;
-    font-size:12px;
-    opacity:0.6;
-}
-</style>
-</head>
-
-<body>
-
-<div class="stars"></div>
-
-<div class="card">
-
-<img src="6841707944586560513_avatar.png" class="profile">
-
-<h1 class="typing"></h1>
-<p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>
-
-<div class="section">
-<b>⚡ Skills</b>
-<p>HTML • CSS • JavaScript (learning)</p>
-</div>
-
-<a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
+<!DOCTYPE html>  <html lang="id">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Hikmal Maulana | Portfolio</title>  <style>  
+*{  
+    margin:0;  
+    padding:0;  
+    box-sizing:border-box;  
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;  
+}  
+  
+/* ===== BACKGROUND ===== */  
+body{  
+    min-height:100vh;  
+    display:flex;  
+    justify-content:center;  
+    align-items:center;  
+    background: linear-gradient(135deg,#0f172a,#1e1b4b,#0b1220);  
+    color:white;  
+    padding:20px;  
+    overflow:hidden;  
+}  
+  
+/* NEBULA EFFECT */  
+body::before{  
+    content:"";  
+    position:fixed;  
+    width:200%;  
+    height:200%;  
+    background:  
+    radial-gradient(circle at 20% 20%, rgba(124,58,237,0.25), transparent 40%),  
+    radial-gradient(circle at 80% 80%, rgba(59,130,246,0.2), transparent 40%),  
+    radial-gradient(circle at 50% 50%, rgba(16,185,129,0.15), transparent 50%);  
+    animation: moveGlow 12s infinite alternate ease-in-out;  
+    z-index:-2;  
+}  
+  
+@keyframes moveGlow{  
+    from{transform:translate(-10%,-10%);}  
+    to{transform:translate(10%,10%);}  
+}  
+  
+/* ===== STARS ===== */  
+.stars{  
+    position:fixed;  
+    width:100%;  
+    height:100%;  
+    z-index:-1;  
+}  
+  
+.star{  
+    position:absolute;  
+    width:2px;  
+    height:2px;  
+    background:white;  
+    border-radius:50%;  
+    opacity:0.6;  
+    animation: floatStar linear infinite;  
+    filter:blur(0.3px);  
+    box-shadow:0 0 6px white;  
+}  
+  
+@keyframes floatStar{  
+    from{  
+        transform:translateY(100vh);  
+        opacity:0;  
+    }  
+    30%{opacity:1;}  
+    to{  
+        transform:translateY(-100vh) translateX(20px);  
+        opacity:0;  
+    }  
+}  
+  
+/* SHOOTING STAR */  
+.shooting-star{  
+    position:fixed;  
+    width:120px;  
+    height:2px;  
+    background:linear-gradient(90deg,white,transparent);  
+    top:-10vh;  
+    left:-10vw;  
+    transform:rotate(45deg);  
+    opacity:0;  
+    animation:shoot 2s linear forwards;  
+    z-index:-1;  
+}  
+  
+@keyframes shoot{  
+    0%{transform:translate(0,0) rotate(45deg);opacity:0;}  
+    10%{opacity:1;}  
+    100%{transform:translate(120vw,120vh) rotate(45deg);opacity:0;}  
+}  
+  
+/* ===== CARD ===== */  
+.card{  
+    width:100%;  
+    max-width:420px;  
+    padding:25px;  
+    border-radius:25px;  
+    background:rgba(255,255,255,0.08);  
+    backdrop-filter:blur(18px);  
+    border:1px solid rgba(255,255,255,0.15);  
+    box-shadow:0 10px 40px rgba(0,0,0,0.5),  
+               0 0 20px rgba(124,58,237,0.2);  
+    text-align:center;  
+    transition:0.3s ease;  
+    animation:fade 1s ease;  
+}  
+    .card:hover{  
+    box-shadow:0 15px 50px rgba(0,0,0,0.6),  
+               0 0 30px rgba(124,58,237,0.4);  
+    }  
+  
+@keyframes fade{  
+    from{opacity:0;transform:translateY(20px);}  
+    to{opacity:1;transform:translateY(0);}  
+}  
+  
+/* PROFILE */  
+.profile{  
+    width:110px;  
+    height:110px;  
+    border-radius:50%;  
+    object-fit:cover;  
+    border:3px solid white;  
+    margin-bottom:15px;  
+}  
+  
+/* TEXT */  
+h1{  
+    font-size:22px;  
+    margin-bottom:5px;  
+}  
+  
+.bio{  
+    font-size:14px;  
+    opacity:0.8;  
+    margin-bottom:20px;  
+}  
+  
+/* TYPEWRITER */  
+.typing{  
+    font-size:22px;  
+    font-weight:600;  
+    border-right:2px solid white;  
+    white-space:nowrap;  
+    overflow:hidden;  
+    width:fit-content;  
+    margin:0 auto;  
+    animation:blink 0.7s infinite;  
+}  
+  
+@keyframes blink{  
+    50%{border-color:transparent;}  
+}  
+  
+/* BUTTON */  
+.btn{  
+    display:block;  
+    margin:10px 0;  
+    padding:12px;  
+    border-radius:12px;  
+    background:rgba(255,255,255,0.12);  
+    color:white;  
+    text-decoration:none;  
+    transition:0.3s;  
+    font-weight:500;  
+}  
+  
+.btn:hover{  
+    background:rgba(255,255,255,0.25);  
+    transform:scale(1.03);  
+}  
+    .btn:active{  
+    transform:scale(0.97);  
+    }  
+  
+/* SECTION */  
+.section{  
+    margin-top:15px;  
+    text-align:left;  
+    font-size:14px;  
+    opacity:0.9;  
+}  
+  
+.footer{  
+    margin-top:20px;  
+    font-size:12px;  
+    opacity:0.6;  
+}  
+</style>  </head>  <body>  <div class="stars"></div>  <div class="card">  <img src="6841707944586560513_avatar.png" class="profile">  <h1 class="typing"></h1>  
+<p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p>  <div class="section">  
+<b>⚡ Skills</b>  
+<p>HTML • CSS • JavaScript (learning)</p>  
+</div>  <a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
 <a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
 <a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
 
-<!-- Tambahkan di sini -->
-<audio id="bgMusic" src="ssstik.io_1781538196170.mp3" loop></audio>
+<!-- Tambahkan di sini -->  <audio id="bgMusic" loop>  
+    <source src="ssstik.io_1781538196170.mp3" type="audio/mpeg">  
+</audio>  <button class="btn" id="musicBtn">🎵 Putar Musik</button>
 
-<button class="btn" id="musicBtn">🎵 Putar Musik</button>
-
-<div class="footer">
-Made with ❤️ using GitHub Pages
-</div>
-
-</div>
-
-<script>
-/* ===== JAM ===== */
-
-/* ===== TYPING ===== */
-const teks = "Hikmal Maulana";
-let i = 0;
-
-function typeEffect(){
-    const el = document.querySelector(".typing");
-
-    if(i < teks.length){
-        el.innerHTML += teks.charAt(i);
-        i++;
-        setTimeout(typeEffect, 120);
-    } else {
-        setTimeout(()=>{
-            el.innerHTML = "";
-            i = 0;
-            typeEffect();
-        },2000);
-    }
-}
-typeEffect();
-
-/* ===== STARS ===== */
-function createStars(){
-    const container = document.querySelector(".stars");
-
-    for(let i=0;i<80;i++){
-        let star = document.createElement("div");
-        star.classList.add("star");
-
-        star.style.left = Math.random()*100 + "vw";
-        star.style.top = Math.random()*100 + "vh";
-        star.style.animationDuration = (Math.random()*5+3)+"s";
-
-        container.appendChild(star);
-    }
-}
-createStars();
-
-/* ===== SHOOTING STAR ===== */
-function shoot(){
-    const star = document.createElement("div");
-    star.classList.add("shooting-star");
-    document.body.appendChild(star);
-
-    setTimeout(()=>star.remove(),2000);
-}
-
-setInterval(()=>{
-    if(Math.random()>0.6){
-        shoot();
-    }
-},3000);
-
-/* ===== PARALLAX + HOVER FINAL ===== */
-const card = document.querySelector(".card");
-
-let isHover = false;
-
-card.addEventListener("mouseenter", ()=>{
-    isHover = true;
-});
-
-card.addEventListener("mouseleave", ()=>{
-    isHover = false;
-});
-
-document.addEventListener("mousemove",(e)=>{
-    const x = (window.innerWidth/2 - e.clientX)/50;
-    const y = (window.innerHeight/2 - e.clientY)/50;
-
-    const scale = isHover ? 1.05 : 1.02;
-
-    card.style.transform =
-        `translate(${x}px,${y}px) scale(${scale})`;
-});
-
-    const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-music.volume = 1;
-
-musicBtn.addEventListener("click", async () => {
-    if (music.paused) {
-        try {
-            await music.play();
-            musicBtn.textContent = "⏸️ Hentikan Musik";
-        } catch (e) {
-            alert("Gagal memutar musik");
-        }
-    } else {
-        music.pause();
-        musicBtn.textContent = "🎵 Putar Musik";
-    }
-});
-</script>
-
-</body>
-</html>
+<div class="footer">  
+Made with ❤️ using GitHub Pages  
+</div>  </div>  <script>  
+/* ===== JAM ===== */  
+  
+/* ===== TYPING ===== */  
+const teks = "Hikmal Maulana";  
+let i = 0;  
+  
+function typeEffect(){  
+    const el = document.querySelector(".typing");  
+  
+    if(i < teks.length){  
+        el.innerHTML += teks.charAt(i);  
+        i++;  
+        setTimeout(typeEffect, 120);  
+    } else {  
+        setTimeout(()=>{  
+            el.innerHTML = "";  
+            i = 0;  
+            typeEffect();  
+        },2000);  
+    }  
+}  
+typeEffect();  
+  
+/* ===== STARS ===== */  
+function createStars(){  
+    const container = document.querySelector(".stars");  
+  
+    for(let i=0;i<80;i++){  
+        let star = document.createElement("div");  
+        star.classList.add("star");  
+  
+        star.style.left = Math.random()*100 + "vw";  
+        star.style.top = Math.random()*100 + "vh";  
+        star.style.animationDuration = (Math.random()*5+3)+"s";  
+  
+        container.appendChild(star);  
+    }  
+}  
+createStars();  
+  
+/* ===== SHOOTING STAR ===== */  
+function shoot(){  
+    const star = document.createElement("div");  
+    star.classList.add("shooting-star");  
+    document.body.appendChild(star);  
+  
+    setTimeout(()=>star.remove(),2000);  
+}  
+  
+setInterval(()=>{  
+    if(Math.random()>0.6){  
+        shoot();  
+    }  
+},3000);  
+  
+/* ===== PARALLAX + HOVER FINAL ===== */  
+const card = document.querySelector(".card");  
+  
+let isHover = false;  
+  
+card.addEventListener("mouseenter", ()=>{  
+    isHover = true;  
+});  
+  
+card.addEventListener("mouseleave", ()=>{  
+    isHover = false;  
+});  
+  
+document.addEventListener("mousemove",(e)=>{  
+    const x = (window.innerWidth/2 - e.clientX)/50;  
+    const y = (window.innerHeight/2 - e.clientY)/50;  
+  
+    const scale = isHover ? 1.05 : 1.02;  
+  
+    card.style.transform =  
+        `translate(${x}px,${y}px) scale(${scale})`;  
+});  
+  
+    const music = document.getElementById("bgMusic");  
+const musicBtn = document.getElementById("musicBtn");  
+  
+let playing = false;  
+  
+musicBtn.addEventListener("click", () => {  
+    if (!playing) {  
+        music.play();  
+        musicBtn.textContent = "⏸️ Hentikan Musik";  
+        playing = true;  
+    } else {  
+        music.pause();  
+        musicBtn.textContent = "🎵 Putar Musik";  
+        playing = false;  
+    }  
+});  
+</script>  </body>  
+</html>  
+cek
