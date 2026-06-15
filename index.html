@@ -161,6 +161,11 @@ h1{
 
 /* BUTTON */
 .btn{
+    button.btn{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
     display:block;
     margin:10px 0;
     padding:12px;
@@ -313,11 +318,15 @@ const musicBtn = document.getElementById("musicBtn");
 
 let playing = false;
 
-musicBtn.addEventListener("click", () => {
+musicBtn.addEventListener("click", async () => {
     if (!playing) {
-        music.play();
-        musicBtn.textContent = "⏸️ Hentikan Musik";
-        playing = true;
+        try {
+            await music.play();
+            musicBtn.textContent = "⏸️ Hentikan Musik";
+            playing = true;
+        } catch (e) {
+            alert("Musik gagal diputar.");
+        }
     } else {
         music.pause();
         musicBtn.textContent = "🎵 Putar Musik";
