@@ -232,8 +232,22 @@ body.light-mode .typing{
     font-size:15px;
     font-weight:600;
     }
+
+    .greeting{
+    margin:10px 0;
+    padding:8px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    font-size:16px;
+    font-weight:600;
+    }
 </style>  </head>  <body>  <div class="stars"></div>  <div class="card"> 
-    <img src="6841707944586560513_avatar.png" class="profile">  <h1 class="typing"></h1>  
+    <img src="6841707944586560513_avatar.png" class="profile"> 
+    <h1 class="typing"></h1>  
+
+    <div id="greeting" class="greeting"></div>
+    
 <p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p> 
 
     <div id="clock" class="clock"></div>
@@ -413,6 +427,25 @@ themeBtn.addEventListener("click", () => {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+    function updateGreeting() {
+    const hour = new Date().getHours();
+    let greeting = "";
+
+    if (hour >= 5 && hour < 11) {
+        greeting = "🌅 Selamat Pagi, Hikmal!";
+    } else if (hour >= 11 && hour < 15) {
+        greeting = "☀️ Selamat Siang, Hikmal!";
+    } else if (hour >= 15 && hour < 18) {
+        greeting = "🌇 Selamat Sore, Hikmal!";
+    } else {
+        greeting = "🌙 Selamat Malam, Hikmal!";
+    }
+
+    document.getElementById("greeting").textContent = greeting;
+}
+
+updateGreeting();
 </script>  
 </body>  
 </html>  
