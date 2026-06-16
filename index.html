@@ -308,11 +308,30 @@ body.light-mode .typing{
     border-radius:10px;
     max-width:100%;
                           }
+
+    .quote{
+    margin:12px 0;
+    padding:10px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    font-size:14px;
+    font-style:italic;
+    text-align:center;
+    opacity:0;
+    transition:opacity 0.5s ease;
+    }
+    body.light-mode .quote{
+    background:rgba(0,0,0,0.08);
+    color:#111827;
+    }
 </style>  </head>  <body>  <div class="stars"></div>  <div class="card"> 
     <img src="6841707944586560513_avatar.png" class="profile"> 
     <h1 class="typing"></h1>  
 
     <div id="greeting" class="greeting"></div>
+
+    <div id="quote" class="quote"></div>
     
 <p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p> 
 
@@ -545,6 +564,36 @@ updateGreeting();
         document.querySelector(".js").style.width = "60%";
     }, 500);
 });
+
+    const quotes = [
+    "💡 Never Stop Learning.",
+    "🚀 Dream Big, Build Bigger.",
+    "💻 Code. Sleep. Repeat.",
+    "🌟 Kesuksesan dimulai dari langkah kecil.",
+    "🔥 Jangan menyerah sebelum mencoba.",
+    "📚 Belajar hari ini, sukses esok hari.",
+    "⚡ Stay Hungry, Stay Foolish.",
+    "🎯 Fokus pada proses, hasil akan mengikuti.",
+    "✨ Jadilah lebih baik dari dirimu yang kemarin.",
+    "🌈 Every Expert Was Once a Beginner."
+];
+
+const quoteEl = document.getElementById("quote");
+
+function changeQuote(){
+    quoteEl.style.opacity = 0;
+
+    setTimeout(() => {
+        const random =
+            quotes[Math.floor(Math.random() * quotes.length)];
+
+        quoteEl.textContent = random;
+        quoteEl.style.opacity = 1;
+    }, 300);
+}
+
+changeQuote();          // tampil pertama kali
+setInterval(changeQuote, 5000); // ganti setiap 5 detik
 </script>  
 </body>  
 </html>  
