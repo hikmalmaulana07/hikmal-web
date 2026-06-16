@@ -141,20 +141,44 @@ h1{
 }  
   
 /* TYPEWRITER */  
-.typing{  
-    font-size:22px;  
-    font-weight:600;  
-    border-right:2px solid white;  
-    white-space:nowrap;  
-    overflow:hidden;  
-    width:fit-content;  
-    margin:0 auto;  
-    animation:blink 0.7s infinite;  
-}  
+.typing{
+    font-size:22px;
+    font-weight:700;
+    white-space:nowrap;
+    overflow:hidden;
+    width:fit-content;
+    margin:0 auto;
+    border-right:2px solid white;
+
+    background: linear-gradient(
+        90deg,
+        #00f5ff,
+        #7c3aed,
+        #ff00ff,
+        #00f5ff
+    );
+    background-size:300% 100%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    filter: drop-shadow(0 0 8px rgba(124,58,237,0.8));
+
+    animation:
+        blink 0.7s infinite,
+        gradientMove 4s linear infinite;
+}
   
 @keyframes blink{  
     50%{border-color:transparent;}  
 }  
+    @keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    100%{
+        background-position:300% 50%;
+    }
+    }
   
 /* BUTTON */  
 .btn{
