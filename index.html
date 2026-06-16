@@ -325,6 +325,14 @@ body.light-mode .typing{
     background:rgba(0,0,0,0.08);
     color:#111827;
     }
+
+    #progress{
+    width:100%;
+    height:6px;
+    margin-top:10px;
+    cursor:pointer;
+    accent-color:#8b5cf6;
+    }
 </style>  </head>  <body>  <div class="stars"></div>  <div class="card"> 
     <img src="6841707944586560513_avatar.png" class="profile"> 
     <h1 class="typing"></h1>  
@@ -368,9 +376,12 @@ body.light-mode .typing{
 <a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
 <a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
 
-<!-- Tambahkan di sini -->  <audio id="bgMusic" loop>  
+<!-- Tambahkan di sini --> 
+    <audio id="bgMusic" loop>  
     <source src="ssstik.io_1781538196170.mp3" type="audio/mpeg">  
 </audio>  <button class="btn" id="musicBtn">🎵 Putar Musik</button>
+
+    <input type="range" id="progress" value="0" min="0" max="100">
 
     <div class="visitor">
     👀 Visitors<br>
@@ -594,6 +605,22 @@ function changeQuote(){
 
 changeQuote();          // tampil pertama kali
 setInterval(changeQuote, 5000); // ganti setiap 5 detik
+
+    const progress = document.getElementById("progress");
+
+// Update progress saat lagu berjalan
+music.addEventListener("timeupdate", () => {
+    if (music.duration) {
+        progress.value = (music.currentTime / music.duration) * 100;
+    }
+});
+
+// Geser progress untuk pindah posisi lagu
+progress.addEventListener("input", () => {
+    if (music.duration) {
+        music.currentTime = (progress.value / 100) * music.duration;
+    }
+});
 </script>  
 </body>  
 </html>  
