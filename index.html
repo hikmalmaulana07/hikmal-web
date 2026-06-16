@@ -113,6 +113,40 @@ body::before{
                0 0 30px rgba(124,58,237,0.4);  
     }  
   
+
+.card{
+    position:relative;
+    overflow:hidden;
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    border-radius:25px;
+    background:linear-gradient(90deg,#00f5ff,#7c3aed,#ff00ff,#00f5ff);
+    background-size:300% 300%;
+    animation:borderMove 4s linear infinite;
+    z-index:-2;
+}
+.card::after{
+    content:"";
+    position:absolute;
+    inset:2px;
+    border-radius:23px;
+    background:rgba(15,23,42,.95);
+    z-index:-1;
+}
+body.light-mode .card::after{
+    background:rgba(255,255,255,.75);
+}
+.card:hover::before{
+    filter:blur(3px) drop-shadow(0 0 10px #7c3aed) drop-shadow(0 0 20px #00f5ff);
+}
+@keyframes borderMove{
+0%{background-position:0% 50%;}
+100%{background-position:300% 50%;}
+}
+
 @keyframes fade{  
     from{opacity:0;transform:translateY(20px);}  
     to{opacity:1;transform:translateY(0);}  
@@ -341,12 +375,12 @@ body.light-mode .typing{
 
     <div id="quote" class="quote"></div>
     
-<p class="bio">🚀 Web Developer Beginner | GitHub Enthusiast</p> 
+<p class="bio">ðŸš€ Web Developer Beginner | GitHub Enthusiast</p> 
 
     <div id="clock" class="clock"></div>
     
 <div class="section">
-    <b>⚡ Skills</b>
+    <b>âš¡ Skills</b>
 
     <div class="skill">
         <span>HTML</span>
@@ -370,25 +404,25 @@ body.light-mode .typing{
     </div>
 </div>
     
-    <button class="btn" id="themeBtn">🌙 Dark Mode</button>
+    <button class="btn" id="themeBtn">ðŸŒ™ Dark Mode</button>
     
-    <a class="btn" href="https://github.com/hikmalmaulana07">🐙 GitHub</a>
-<a class="btn" href="https://wa.me/628885107619">💬 WhatsApp</a>
-<a class="btn" href="https://instagram.com/hkmaal.mlna07">📷 Instagram</a>
+    <a class="btn" href="https://github.com/hikmalmaulana07">ðŸ™ GitHub</a>
+<a class="btn" href="https://wa.me/628885107619">ðŸ’¬ WhatsApp</a>
+<a class="btn" href="https://instagram.com/hkmaal.mlna07">ðŸ“· Instagram</a>
 
 <!-- Tambahkan di sini --> 
     <audio id="bgMusic" loop>  
     <source src="ssstik.io_1781538196170.mp3" type="audio/mpeg">  
-</audio>  <button class="btn" id="musicBtn">🎵 Putar Musik</button>
+</audio>  <button class="btn" id="musicBtn">ðŸŽµ Putar Musik</button>
 
     <input type="range" id="progress" value="0" min="0" max="100">
 
     <div class="visitor">
-    👀 Visitors<br>
+    ðŸ‘€ Visitors<br>
     <img src="https://visitor-badge.laobi.icu/badge?page_id=hikmalmaulana07.hikmal-web&left_text=Pengunjung" alt="Visitor Counter">
     </div>
 <div class="footer">  
-Made with ❤️ using GitHub Pages  
+Made with â¤ï¸ using GitHub Pages  
 </div>  </div>  <script>  
 /* ===== JAM ===== */  
   
@@ -476,11 +510,11 @@ let playing = false;
 musicBtn.addEventListener("click", () => {  
     if (!playing) {  
         music.play();  
-        musicBtn.textContent = "⏸️ Hentikan Musik";  
+        musicBtn.textContent = "â¸ï¸ Hentikan Musik";  
         playing = true;  
     } else {  
         music.pause();  
-        musicBtn.textContent = "🎵 Putar Musik";  
+        musicBtn.textContent = "ðŸŽµ Putar Musik";  
         playing = false;  
     }  
 }); 
@@ -491,9 +525,9 @@ const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "light") {
     document.body.classList.add("light-mode");
-    themeBtn.textContent = "🌙 Dark Mode";
+    themeBtn.textContent = "ðŸŒ™ Dark Mode";
 } else {
-    themeBtn.textContent = "☀️ Light Mode";
+    themeBtn.textContent = "â˜€ï¸ Light Mode";
 }
 
 themeBtn.addEventListener("click", () => {
@@ -501,10 +535,10 @@ themeBtn.addEventListener("click", () => {
 
     if (document.body.classList.contains("light-mode")) {
         localStorage.setItem("theme", "light");
-        themeBtn.textContent = "🌙 Dark Mode";
+        themeBtn.textContent = "ðŸŒ™ Dark Mode";
     } else {
         localStorage.setItem("theme", "dark");
-        themeBtn.textContent = "☀️ Light Mode";
+        themeBtn.textContent = "â˜€ï¸ Light Mode";
     }
 });
     function updateClock() {
@@ -543,7 +577,7 @@ themeBtn.addEventListener("click", () => {
         `${hari[now.getDay()]}, ${now.getDate()} ${bulan[now.getMonth()]} ${now.getFullYear()}`;
 
     document.getElementById("clock").innerHTML =
-        `🕒 ${h}:${m}:${s}<br>📅 ${tanggal}`;
+        `ðŸ•’ ${h}:${m}:${s}<br>ðŸ“… ${tanggal}`;
 }
 
 updateClock();
@@ -554,13 +588,13 @@ setInterval(updateClock, 1000);
     let greeting = "";
 
     if (hour >= 5 && hour < 11) {
-        greeting = "🌅 Selamat Pagi, Hikmal!";
+        greeting = "ðŸŒ… Selamat Pagi, Hikmal!";
     } else if (hour >= 11 && hour < 15) {
-        greeting = "☀️ Selamat Siang, Hikmal!";
+        greeting = "â˜€ï¸ Selamat Siang, Hikmal!";
     } else if (hour >= 15 && hour < 18) {
-        greeting = "🌇 Selamat Sore, Hikmal!";
+        greeting = "ðŸŒ‡ Selamat Sore, Hikmal!";
     } else {
-        greeting = "🌙 Selamat Malam, Hikmal!";
+        greeting = "ðŸŒ™ Selamat Malam, Hikmal!";
     }
 
     document.getElementById("greeting").textContent = greeting;
@@ -577,16 +611,16 @@ updateGreeting();
 });
 
     const quotes = [
-    "💡 Never Stop Learning.",
-    "🚀 Dream Big, Build Bigger.",
-    "💻 Code. Sleep. Repeat.",
-    "🌟 Kesuksesan dimulai dari langkah kecil.",
-    "🔥 Jangan menyerah sebelum mencoba.",
-    "📚 Belajar hari ini, sukses esok hari.",
-    "⚡ Stay Hungry, Stay Foolish.",
-    "🎯 Fokus pada proses, hasil akan mengikuti.",
-    "✨ Jadilah lebih baik dari dirimu yang kemarin.",
-    "🌈 Every Expert Was Once a Beginner."
+    "ðŸ’¡ Never Stop Learning.",
+    "ðŸš€ Dream Big, Build Bigger.",
+    "ðŸ’» Code. Sleep. Repeat.",
+    "ðŸŒŸ Kesuksesan dimulai dari langkah kecil.",
+    "ðŸ”¥ Jangan menyerah sebelum mencoba.",
+    "ðŸ“š Belajar hari ini, sukses esok hari.",
+    "âš¡ Stay Hungry, Stay Foolish.",
+    "ðŸŽ¯ Fokus pada proses, hasil akan mengikuti.",
+    "âœ¨ Jadilah lebih baik dari dirimu yang kemarin.",
+    "ðŸŒˆ Every Expert Was Once a Beginner."
 ];
 
 const quoteEl = document.getElementById("quote");
